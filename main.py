@@ -1,7 +1,7 @@
-#Election validation
-from setuptools.command.easy_install import is_sh
+# Election validation
 
 country = 'страна'
+
 
 def get_age():
     while True:
@@ -45,6 +45,8 @@ def main():
         age = get_age()
         citizenship = get_citizenship()
         is_banned = get_banned_state()
-        print("Может голосовать\n" if age >= 18 and citizenship == country and not is_banned else "Не может голосовать\n")
+        print(
+            "Может голосовать\n" if age >= 18 and citizenship == country and not is_banned else "Не может голосовать\n")
+
 
 main()
