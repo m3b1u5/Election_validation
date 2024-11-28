@@ -8,7 +8,7 @@ def get_age():
         try:
             age = int(input("Введите возраст кандидата: "))
         except ValueError:
-            "Ошибка, некорректное число"
+            print("Ошибка, некорректное число")
         else:
             return age
 
@@ -16,9 +16,11 @@ def get_age():
 def get_citizenship():
     while True:
         try:
-            citizenship = str(input("Введите гражданство кандидата: ")).lower()
+            citizenship = str(input("Введите гражданство кандидата (название страны): ")).lower()
+            if not citizenship.isalpha():
+                raise ValueError
         except ValueError:
-            "Ошибка, некорректный текст"
+            print("Ошибка, некорректный текст")
         else:
             return citizenship
 
@@ -34,7 +36,7 @@ def get_banned_state():
             else:
                 raise ValueError
         except ValueError:
-            "Ошибка, введите Да или Нет"
+            print("Ошибка, введите Да или Нет")
         else:
             return is_banned
 
